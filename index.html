@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Water Flow Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="smart-header">
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>🌐 Smart Drainage System Dashboard</h1>
+      <p>Real-time water flow monitoring, flood alerts & predictive analysis</p>
+      <div class="status-bar">
+        <span class="status-dot"></span>
+        <span class="status-text">System Online • Last Sync: <span id="lastUpdated">Just Now</span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tributary Cards -->
+  <section class="container">
+    <div class="card" data-name="Tributary 1">
+      <h3>Tributary 1</h3>
+      <p>Flow Rate: 35 L/s</p>
+      <p>Volume: 1200 L</p>
+      <button class="status normal" data-name="Tributary 1">Normal</button>
+    </div>
+
+    <div class="card" data-name="Tributary 2">
+      <h3>Tributary 2</h3>
+      <p>Flow Rate: 15 L/s</p>
+      <p>Volume: 600 L</p>
+      <button class="status warning" data-name="Tributary 2">Low Flow</button>
+    </div>
+
+    <div class="card" data-name="Tributary 3">
+      <h3>Tributary 3</h3>
+      <p>Flow Rate: 3 L/s</p>
+      <p>Volume: 200 L</p>
+      <button class="status blocked" data-name="Tributary 3">Blocked ⚠️</button>
+    </div>
+
+    <div class="card" data-name="Tributary 4">
+      <h3>Tributary 4</h3>
+      <p>Flow Rate: 28 L/s</p>
+      <p>Volume: 900 L</p>
+      <button class="status normal" data-name="Tributary 4">Normal</button>
+    </div>
+  </section>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <h2 id="popupTitle"></h2>
+    <div id="noDataMsg" class="no-data">⚠️ No historical data available.</div>
+    <canvas id="flowChart"></canvas>
+    <button class="close-btn" id="closeBtn">Close</button>
+  </div>
+
+  <!-- Analytics Section -->
+  <section class="analytics-panel">
+    <h2>💧 Water Flow Analytics</h2>
+    <div class="charts-container">
+      <div class="chart-box">
+        <h3>Flow Rate (L/s)</h3>
+        <canvas id="tributaryFlowChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Blockage Detection (%)</h3>
+        <canvas id="blockageChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Flow Comparison</h3>
+        <canvas id="comparisonChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Realistic Indian Drainage Section -->
+  <section class="realistic-section">
+    <h2 class="section-title">🚧 Realistic Indian Drainage Conditions</h2>
+    <p class="desc">These visuals represent common water clogging and drainage challenges observed across Indian cities during monsoon. Our system aims to predict and prevent such occurrences using real-time flow data and smart alerts.</p>
+
+    <div class="image-gallery">
+      <div class="gallery-item">
+        <img src="https://www.vajiraoinstitute.com/images/blogs/drainage-problem/water-loging-of-diff-cities-of-india.webp" alt="Water logging India">
+        <p>Mumbai streets flooded due to poor drainage maintenance</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.indianexpress.com/2023/06/18mum-hardlook4-6col.jpg" alt="Drain overflow Delhi NCR">
+        <p>Overflowing drains during monsoon in Delhi NCR</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://publish.tribuneindia.com/wp-content/uploads/2024/07/2024_7%24largeimg_419614292.webp" alt="Drain blockage Punjab">
+        <p>Drainage blockage reported in Punjab towns — need for early detection</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://akm-img-a-in.tosshub.com/indiatoday/styles/medium_crop_simple/public/2023-12/chennai_flood_1.jpg?VersionId=K_WG0N0wlS3QTZ_bvxAYJ59CZ.QYoxmo&size=750:*" alt="Chennai floods">
+        <p>Urban flooding in Chennai due to poor waste disposal in drains</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h3>Team TexpoTitans</h3>
+    <p>Contact: <a href="mailto:teamtexpotitans@gmail.com">teamtexpotitans@gmail.com</a></p>
+    <p>© 2025 TexpoTitans | All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
